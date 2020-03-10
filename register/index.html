@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="myCtrl" >
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>Expertise Locator System</title>
+<link href="../insider/dist/css/styles.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-primary">
+<div id="layoutAuthentication">
+  <div id="layoutAuthentication_content">
+    <main>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-7">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+              <div class="card-header">
+                <h3 class="text-center font-weight-light my-4">Be an Expertise</h3>
+              </div>
+              <div class="card-body">
+                <form ng-submit="register()">
+                  <div class="form-group">
+                    <label class="small mb-1">First, Please enter your email</label>
+                    <input class="form-control" id="email" ng-blur="check()" ng-model="expert.email" type="email" aria-describedby="emailHelp"  />
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback">{{errormsj}}</div>
+                  </div>
+                  <fieldset disabled="false" id="fs">
+                    <div class="form-group">
+                      <label class="small mb-1">Name</label>
+                      <input class="form-control" ng-model="expert.name" type="text" required/>
+                    </div>
+                    <div class="form-group">
+                      <label class="small mb-1">Password</label>
+                      <input class="form-control" ng-model="expert.password" type="password" required/>
+                    </div>
+                    <div class="form-group">
+                      <label class="small mb-1">Contact No</label>
+                      <input class="form-control" ng-model="expert.contact" type="text" required/>
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label class="small mb-1">Position</label>
+                          <select ng-model="expert.position" class="form-control" required>
+                            <option value="Junior">Junior</option>
+                            <option value="Senior">Senior</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label class="small mb-1">Year of Experience</label>
+                          <div class="input-group mb-3">
+                            <input type="number" min="0" class="form-control" ng-model="expert.year" required>
+                            <div class="input-group-append"><span class="input-group-text" id="basic-addon2">Year</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label class="small mb-1" for="">Area of Expertise</label>
+                          <select ng-model="expert.aoe" class="form-control" required>
+                            <option ng-repeat="i in opt.AOE" value="{{i.id}}">{{i.aoe}}</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label class="small mb-1" for="">Department</label>
+                          <select ng-model="expert.department" class="form-control" required>
+                            <option ng-repeat="d in opt.department" value="{{d.id}}">{{d.dp}}</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group mt-4 mb-0"><button class="btn btn-primary btn-block">Create Account</button></div>
+                  </fieldset>
+                </form>
+              </div>
+              <div class="card-footer text-center">
+                <div class="small"><a href="../sign-in/">Have an account? Go to login</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+    </main>
+  </div>
+  <div id="layoutAuthentication_footer">
+    <footer class="py-4 bg-light mt-auto">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-between small">
+          <div class="text-muted">Expertise Locator System</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script> 
+<script src="../insider/dist/js/scripts.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script> 
+<script src="../controlller/ctl_reg.js"></script>
+</body>
+</html>
